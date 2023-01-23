@@ -1,7 +1,8 @@
-import { View, Fab, Icon, FlatList, Text, Spacer, VStack, HStack,Box } from "native-base";
+import { View, Fab, Icon, FlatList, Text, Spacer, VStack, HStack,Box, Center, Heading } from "native-base";
 import { useCallback, useEffect, useState } from "react";
 import { AntDesign } from "@expo/vector-icons";
-import { getCollection } from "../../config/ApiServices";
+import { getCollection } from "../../config/dbServices";
+import { StatusBar } from "react-native";
 
 const Home = () => {
   const [dados, setDados] = useState<any>([]);
@@ -20,10 +21,17 @@ const Home = () => {
     console.log(dados)
   return(
     <Box>
+      <StatusBar barStyle={"light-content"} backgroundColor="transparent" translucent/>
+
+            <Box bg="success.700" w="100%" py={20}>
+            <Heading color="text.50" textAlign={"center"}>Teste</Heading>
+            </Box>
+
       <FlatList 
       data={dados}
-      renderItem={({item}) => <Box borderBottomWidth="1"  borderColor="muted.800" pl={["0", "4"]} pr={["0", "5"]} py="2">
-              <HStack space={[2, 3]} justifyContent="space-between">
+      renderItem={({item}) => <Box py="3">
+              <HStack space={[2, 3]} justifyContent="center">
+              <Box w="97%" h="20" bg="muted.50" rounded="md" shadow={3} >
                 <VStack>
                   <Text _dark={{
               color: "warmGray.50"
@@ -42,6 +50,7 @@ const Home = () => {
           }} color="coolGray.800" alignSelf="flex-start">
                   {item.data_pagamento}
                 </Text>
+                </Box>
               </HStack>
             </Box>}
       />

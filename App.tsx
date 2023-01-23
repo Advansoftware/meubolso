@@ -32,6 +32,7 @@ export default function App() {
             component={Home}
             options={{
               headerTintColor: "#F9236a",
+              headerShown: false,
             }}
           />
         </Stack.Navigator>

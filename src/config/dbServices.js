@@ -1,6 +1,7 @@
 import {database} from './firebaseConfig';
 import { collection, getDocs } from "firebase/firestore"
 
+//Criação dos metodos do bd Firebase.
 export const getCollection = async (collectionName) => {
   try{
     let list = [];
