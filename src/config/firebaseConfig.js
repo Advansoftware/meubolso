@@ -17,8 +17,12 @@ const firebaseConfig = {
   measurementId: "G-7WYC9CQ2GL"
 };
 
-const firebase = initializeApp(firebaseConfig);
-const database =  getFirestore(firebase);
-export default database;
+const app = initializeApp(firebaseConfig);
+
+//adicionar as funções do firebase (todas com export na frente).
+export const database =  getFirestore(app);
+
+
+
 // For more information on how to access Firebase in your project,
 // see the Firebase documentation: https://firebase.google.com/docs/web/setup#access-firebase

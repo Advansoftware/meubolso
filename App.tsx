@@ -26,10 +26,13 @@ export default function App() {
   return (
     <NativeBaseProvider theme={theme}>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Home" >
+        <Stack.Navigator initialRouteName="Inicio" >
           <Stack.Screen
-            name="Home"
+            name="Inicio"
             component={Home}
+            options={{
+              headerTintColor: "#F9236a",
+            }}
           />
         </Stack.Navigator>
       </NavigationContainer>
